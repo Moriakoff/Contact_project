@@ -1,14 +1,12 @@
 package csp.backfront.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Past;
 import java.time.LocalDateTime;
@@ -17,6 +15,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class User {
 
@@ -30,8 +29,7 @@ public class User {
     @NotBlank
     private String fullName;
 
+    @Email
     private String email;
 
-    public User() {
-    }
 }

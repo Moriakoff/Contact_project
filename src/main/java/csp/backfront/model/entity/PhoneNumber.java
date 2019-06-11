@@ -1,9 +1,6 @@
 package csp.backfront.model.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
@@ -14,6 +11,7 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @AllArgsConstructor
+@NoArgsConstructor
 @Builder
 public class PhoneNumber {
 
@@ -30,6 +28,4 @@ public class PhoneNumber {
     @ManyToOne
     private User user;
 
-    public PhoneNumber() {
-    }
 }

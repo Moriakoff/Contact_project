@@ -55,7 +55,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     @Transactional
-    public void updateContact(Long id, ContactDto contactDto) throws UserNotFoundException {
+    public void updateContact(Long id, ContactDto contactDto) {
         // TODO: 2019-06-11 Think how change phoneNumber and address without delete
 
         User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User doesn't exist by id"));
@@ -96,7 +96,7 @@ public class ContactServiceImpl implements ContactService {
 
     @Override
     @Transactional
-    public void deleteContact(Long id) throws UserNotFoundException {
+    public void deleteContact(Long id) {
         User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User doesn't exist by id"));
 
         phoneNumberRepository.deleteAllByUser(user);

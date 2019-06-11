@@ -20,8 +20,4 @@ public interface ContactService {
 
     ContactDto getContactByPhoneNumber(String phoneNumber);
 
-
-
-
-
 }
