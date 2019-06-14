@@ -46,8 +46,8 @@ public class ContactController {
     }
 
     @GetMapping("/by-phone")
-    public ContactDto getContactByPhoneNumber(@RequestParam(value = "phone") String phoneNumber) {
-        return contactService.getContactByName(phoneNumber);
+    public List <ContactDto> getContactByPhoneNumber(@RequestParam(value = "phone") String phoneNumber) {
+        return contactService.getContactByPhoneNumber(phoneNumber);
     }
 
 }

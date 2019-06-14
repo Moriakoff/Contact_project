@@ -18,6 +18,6 @@ public interface ContactService {
 
     ContactDto getContactByName(String name);
 
-    ContactDto getContactByPhoneNumber(String phoneNumber);
+    List <ContactDto> getContactByPhoneNumber(String phoneNumber);
 
 }

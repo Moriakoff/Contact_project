@@ -11,7 +11,7 @@ import java.util.List;
 @Builder
 public class ContactDto {
 
-    private String fulName;
+    private String fullName;
 
     private String email;
 
