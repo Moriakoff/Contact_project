@@ -1,7 +1,7 @@
-package csp.backfront.controller;
+package contact.controller;
 
-import csp.backfront.model.dto.ContactDto;
-import csp.backfront.service.ContactService;
+import contact.model.dto.ContactDto;
+import contact.service.ContactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

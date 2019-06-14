@@ -1,6 +1,6 @@
-package csp.backfront.service;
+package contact.service;
 
-import csp.backfront.model.dto.ContactDto;
+import contact.model.dto.ContactDto;
 
 import java.util.List;
 

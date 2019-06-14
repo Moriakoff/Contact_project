@@ -1,7 +1,7 @@
-package csp.backfront.repository;
+package contact.repository;
 
-import csp.backfront.model.entity.PhoneNumber;
-import csp.backfront.model.entity.User;
+import contact.model.entity.PhoneNumber;
+import contact.model.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

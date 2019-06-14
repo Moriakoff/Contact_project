@@ -1,4 +1,4 @@
-package csp.backfront.configuration;
+package contact.configuration;
 
 
 import org.springframework.context.annotation.Bean;

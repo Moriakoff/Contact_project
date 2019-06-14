@@ -1,4 +1,4 @@
-package csp.backfront.model.entity;
+package contact.model.entity;
 
 import lombok.*;
 
@@ -12,9 +12,9 @@ import java.util.List;
 @Getter
 @Setter
 @AllArgsConstructor
-@NoArgsConstructor
 @Builder
-public class PhoneNumber {
+@NoArgsConstructor
+public class Address {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,8 +24,19 @@ public class PhoneNumber {
     private LocalDateTime createdDate;
 
     @NotBlank
-    @Column(unique = true)
-    private String phoneNumber;
+    private String country;
+
+    @NotBlank
+    private String city;
+
+    @NotBlank
+    private String street;
+
+    @NotBlank
+    private String houseNumber;
+
+    @NotBlank
+    private String apartment;
 
     @OneToMany
     private List <User> user;

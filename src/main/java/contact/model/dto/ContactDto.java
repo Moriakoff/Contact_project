@@ -1,4 +1,4 @@
-package csp.backfront.model.dto;
+package contact.model.dto;
 
 import lombok.*;
 

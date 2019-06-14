@@ -1,4 +1,4 @@
-package csp.backfront.model.entity;
+package contact.model.entity;
 
 import lombok.*;
 

@@ -1,15 +1,15 @@
-package csp.backfront.service;
+package contact.service;
 
-import csp.backfront.exception.PhoneNumberNotFoundException;
-import csp.backfront.exception.UserNotFoundException;
-import csp.backfront.model.dto.AddressDto;
-import csp.backfront.model.dto.ContactDto;
-import csp.backfront.model.entity.Address;
-import csp.backfront.model.entity.PhoneNumber;
-import csp.backfront.model.entity.User;
-import csp.backfront.repository.AddressRepository;
-import csp.backfront.repository.PhoneNumberRepository;
-import csp.backfront.repository.UserRepository;
+import contact.exception.PhoneNumberNotFoundException;
+import contact.exception.UserNotFoundException;
+import contact.model.dto.AddressDto;
+import contact.model.dto.ContactDto;
+import contact.model.entity.Address;
+import contact.model.entity.PhoneNumber;
+import contact.model.entity.User;
+import contact.repository.AddressRepository;
+import contact.repository.PhoneNumberRepository;
+import contact.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

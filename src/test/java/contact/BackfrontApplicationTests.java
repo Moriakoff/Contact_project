@@ -1,4 +1,4 @@
-package csp.backfront;
+package contact;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
