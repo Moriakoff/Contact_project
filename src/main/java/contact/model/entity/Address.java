@@ -38,7 +38,7 @@ public class Address {
     @NotBlank
     private String apartment;
 
-    @OneToMany
+    @ManyToMany
     private List <User> user;
 
 }

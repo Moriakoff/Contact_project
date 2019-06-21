@@ -27,7 +27,7 @@ public class PhoneNumber {
     @Column(unique = true)
     private String phoneNumber;
 
-    @OneToMany
+    @ManyToMany
     private List <User> user;
 
 }

@@ -41,7 +41,7 @@ public class ContactServiceImpl implements ContactService {
                 .createdDate(LocalDateTime.now())
                 .build();
 
-        List <PhoneNumber> phoneNumbers = getPhoneNumbersFromContactDto(contactDto, user);
+        List <PhoneNumber> phoneNumbers = createPhoneNumbersFromContactDto(contactDto, user);
 
         List <Address> addresses = createAddressesFromContactDto(contactDto, user);
 
@@ -58,26 +58,14 @@ public class ContactServiceImpl implements ContactService {
 
         User user = userRepository.findById(id).orElseThrow(() -> new UserNotFoundException("User doesn't exist by id"));
 
-/*
-        List <PhoneNumber> phoneNumbers = phoneNumberRepository.findAllByUser(user);
-        List <Address> addresses = addressRepository.findAllByUser(user);
+        user.setFullName(contactDto.getFullName());
+        user.setEmail(contactDto.getEmail());
 
-        phoneNumberRepository.deleteAll(phoneNumbers);
-        addressRepository.deleteAll(addresses);
-*/
-
-        User userToChange = User.builder()
-                .id(user.getId())
-                .fullName(contactDto.getFullName())
-                .email(contactDto.getEmail())
-                .createdDate(user.getCreatedDate())
-                .build();
-
-        List <PhoneNumber> phoneNumbersToChange = getPhoneNumbersFromContactDto(contactDto, user);
+        List <PhoneNumber> phoneNumbersToChange = createPhoneNumbersFromContactDto(contactDto, user);
 
         List <Address> addressesToChange = createAddressesFromContactDto(contactDto, user);
 
-        userRepository.save(userToChange);
+        userRepository.save(user);
         phoneNumberRepository.saveAll(phoneNumbersToChange);
         addressRepository.saveAll(addressesToChange);
 
@@ -171,7 +159,7 @@ public class ContactServiceImpl implements ContactService {
                 .map(address -> convertAddressDtoToAddress(user, address)).collect(Collectors.toList());
     }
 
-    private List <PhoneNumber> getPhoneNumbersFromContactDto(ContactDto contactDto, User user) {
+    private List <PhoneNumber> createPhoneNumbersFromContactDto(ContactDto contactDto, User user) {
         return contactDto.getPhoneNumbers().stream()
                 .map(phone -> getPhoneNumberFromString(phone, user))
                 .collect(Collectors.toList());
